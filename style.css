@@ -1,0 +1,374 @@
+:root {
+  --cp-bg: #F6F2E8;
+  --cp-surface: #FFF9EF;
+  --cp-text: #1B1E1C;
+  --cp-muted: #4B524E;
+  --cp-border: #1B1E1C;
+  --cp-primary: #2F6B4F;
+  --cp-secondary: #B08D57;
+  --cp-accent: #E24D2A;
+  --cp-radius: 10px;
+  --cp-shadow: 6px 6px 0 var(--cp-border);
+  --cp-max: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cp-bg);
+  color: var(--cp-text);
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+header {
+  background-color: var(--cp-surface);
+  border-bottom: 4px solid var(--cp-border);
+  padding: 1rem 0;
+}
+
+nav {
+  max-width: var(--cp-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cp-primary);
+  text-decoration: none;
+  border: 3px solid var(--cp-border);
+  padding: 0.5rem 1rem;
+  background-color: var(--cp-surface);
+  box-shadow: var(--cp-shadow);
+  border-radius: var(--cp-radius);
+  transition: transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-brand a {
+    transition: none;
+  }
+}
+
+.nav-brand a:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--cp-border);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: var(--cp-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--cp-border);
+  background-color: var(--cp-bg);
+  border-radius: var(--cp-radius);
+  transition: all 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a {
+    transition: none;
+  }
+}
+
+.nav-links a:hover {
+  background-color: var(--cp-secondary);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--cp-border);
+}
+
+.nav-links a:focus-visible {
+  outline: 3px solid var(--cp-accent);
+  outline-offset: 2px;
+}
+
+main {
+  max-width: var(--cp-max);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: var(--cp-muted);
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs a {
+  color: var(--cp-primary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+article {
+  background-color: var(--cp-surface);
+  border: 4px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  padding: 2rem;
+  box-shadow: var(--cp-shadow);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 2rem 0;
+  color: var(--cp-primary);
+  border-bottom: 3px solid var(--cp-border);
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--cp-primary);
+  margin: 2rem 0 1rem 0;
+  border-left: 4px solid var(--cp-accent);
+  padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--cp-text);
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+p {
+  margin: 1rem 0;
+  color: var(--cp-text);
+}
+
+a {
+  color: var(--cp-primary);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+}
+
+a:hover {
+  color: var(--cp-accent);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--cp-accent);
+  outline-offset: 2px;
+}
+
+a[rel="external"]::after {
+  content: " ↗";
+  font-size: 0.8em;
+  color: var(--cp-muted);
+}
+
+blockquote {
+  border-left: 4px solid var(--cp-secondary);
+  background-color: var(--cp-bg);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0 var(--cp-radius) var(--cp-radius) 0;
+  font-style: italic;
+  color: var(--cp-muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  background-color: var(--cp-surface);
+  border: 3px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  overflow: hidden;
+  box-shadow: var(--cp-shadow);
+}
+
+table caption {
+  font-weight: bold;
+  padding: 1rem;
+  background-color: var(--cp-primary);
+  color: var(--cp-surface);
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+thead th {
+  background-color: var(--cp-secondary);
+  color: var(--cp-text);
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid var(--cp-border);
+}
+
+@media (min-width: 1024px) {
+  thead th {
+    position: sticky;
+    top: 0;
+  }
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--cp-bg);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--cp-surface);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--cp-border);
+  vertical-align: top;
+}
+
+@media (max-width: 767px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+details {
+  margin: 1rem 0;
+  border: 2px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  background-color: var(--cp-surface);
+}
+
+details[open] {
+  background-color: var(--cp-bg);
+  border-color: var(--cp-primary);
+}
+
+summary {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--cp-primary);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  summary {
+    transition: none;
+  }
+}
+
+summary:hover {
+  background-color: var(--cp-secondary);
+  color: var(--cp-text);
+}
+
+summary:focus-visible {
+  outline: 3px solid var(--cp-accent);
+  outline-offset: 2px;
+}
+
+details[open] summary {
+  border-bottom-color: var(--cp-border);
+}
+
+details p {
+  padding: 0 1rem 1rem 1rem;
+  margin: 0;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+footer {
+  background-color: var(--cp-text);
+  color: var(--cp-surface);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 4px solid var(--cp-border);
+}
+
+footer p {
+  margin: 0;
+  max-width: var(--cp-max);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  article {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
+  main {
+    padding: 3rem 2rem;
+  }
+}
